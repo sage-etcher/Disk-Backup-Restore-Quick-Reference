@@ -30,6 +30,7 @@ sfdisk, dd, PartClone.
   4. Clear package cache.
   5. Install recovery tools.
 
+
     $ ping google.com
     # pacman -Sy
     # pacman -S archlinux-keyring
