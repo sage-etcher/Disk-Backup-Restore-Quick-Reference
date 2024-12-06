@@ -41,6 +41,9 @@ sfdisk, dd, PartClone.
 
 ## Partition Table
 
+For this we use [sfdisk(8)] to store and restore the disk partitioning
+into/from a file.
+
     # sfdisk -d /dev/sda > sda.partition.table.txt
     # sfdisk /dev/sda < sda.partition.table.txt
 
@@ -60,8 +63,8 @@ on a FAT32 partition.
 
 ### Logical Clone using PartClone
 
-PartClone supports most of the common file systems, a non-exauhstive list 
-being: ntfs, exfat, fat32, ext4, btfs, ufs2, and hfs. PartClone backsup only 
+[PartClone] supports most of the common file systems, a non-exauhstive list 
+being: ntfs, exfat, fat32, ext4, btfs, ufs2, and hfs. PartClone backs up only 
 the used sectors, making it fast and efficient, however that also means it can 
 only be used on supported file systems.
 
@@ -70,7 +73,7 @@ only be used on supported file systems.
 
 ### Raw Clone using Unix dd
 
-Unix dd creates a raw 1:1 backup of the partition, including both used and 
+Unix [dd(1)] creates a raw 1:1 backup of the partition, including both used and 
 unused sectors in the resulting image. Compared to PartClone, this proccess is 
 much slower and produces significantly larger images.
 
@@ -80,6 +83,10 @@ cases where the partition's filssystem is not supported by PartClone.
 
     # dd if=/dev/sda2 of=sda2.partition.raw.img bs=1M status=progress
     # dd of=/dev/sda2 if=sda2.partition.raw.img bs=1M status=progress
+
+[dd(1)]: https://www.man7.org/linux/man-pages/man1/dd.1.html
+[sfdisk(8)]: https://www.man7.org/linux/man-pages/man8/sfdisk.8.html
+[PartClone]: https://partclone.org/
 
 ---
 
