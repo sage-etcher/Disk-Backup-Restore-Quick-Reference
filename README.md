@@ -63,10 +63,13 @@ on a FAT32 partition.
 
 ### Logical Clone using PartClone
 
-[PartClone] supports most of the common file systems, a non-exauhstive list 
+[partclone(8)] supports most of the common file systems, a non-exauhstive list 
 being: ntfs, exfat, fat32, ext4, btfs, ufs2, and hfs. PartClone backs up only 
 the used sectors, making it fast and efficient, however that also means it can 
 only be used on supported file systems.
+
+Please see the official [PartClone] website for a complete list of 
+supported filesystems.
 
     # partclone.ntfs -c -s /dev/sda3 -o sda3.partition.ntfs.img
     # partclone.ntfs -r -o /dev/sda3 -s sda3.partition.ntfs.img
@@ -86,7 +89,8 @@ cases where the partition's filssystem is not supported by PartClone.
 
 [dd(1)]: https://www.man7.org/linux/man-pages/man1/dd.1.html
 [sfdisk(8)]: https://www.man7.org/linux/man-pages/man8/sfdisk.8.html
-[PartClone]: https://partclone.org/
+[partclone(8)]: https://manpages.org/partclone/8
+[PartClone]: https://partclone.org
 
 ---
 
