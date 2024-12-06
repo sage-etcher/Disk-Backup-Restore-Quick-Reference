@@ -11,7 +11,7 @@
   - [Partitions](#partitions)
     * [Logical Clone using PartClone](#logical-clone-using-partclone)
     * [Raw Clone using Unix dd](#raw-clone-using-unix-dd)
-  - [License](#license-bsd2clause)
+  - [License](#license-bsd-2-clause)
 
 ---
 
